@@ -1,7 +1,9 @@
 package com.grilledmonkey.leproactivia;
 
-import com.grilledmonkey.leproactivia.WebClient.SuperInterface;
-
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -9,11 +11,15 @@ import android.view.View.OnClickListener;
 import android.webkit.CookieManager;
 import android.webkit.WebView;
 import android.widget.Toast;
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 
+import com.grilledmonkey.leproactivia.WebClient.SuperInterface;
+
+/**
+ * Главная Activity. Тут мы логинимся и разлогиниваемся.
+ * 
+ * @author Aux
+ *
+ */
 public class MainActivity extends Activity implements OnClickListener, SuperInterface {
 	private View introLayout, hurrayLayout;
 	private WebView webview;
@@ -31,8 +37,6 @@ public class MainActivity extends Activity implements OnClickListener, SuperInte
 
 	@SuppressLint("SetJavaScriptEnabled")
 	private void initUI() {
-
-
 		introLayout = findViewById(R.id.intro_layout);
 		hurrayLayout = findViewById(R.id.hurray_layout);
 		webview = (WebView)findViewById(R.id.webview);
@@ -110,11 +114,11 @@ public class MainActivity extends Activity implements OnClickListener, SuperInte
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-	    if(keyCode == KeyEvent.KEYCODE_BACK && locked) {
-	    	Toast.makeText(this, R.string.khoouy, Toast.LENGTH_SHORT).show();
-	        return(true);
-	    }
-	    return(super.onKeyDown(keyCode, event));
+		if(keyCode == KeyEvent.KEYCODE_BACK && locked) {
+			Toast.makeText(this, R.string.khoouy, Toast.LENGTH_SHORT).show();
+			return(true);
+		}
+		return(super.onKeyDown(keyCode, event));
 	}
 
 }

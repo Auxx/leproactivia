@@ -1,7 +1,5 @@
 package com.grilledmonkey.leproactivia;
 
-import com.grilledmonkey.lepropepyaka.Pepyaka;
-
 import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +8,14 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 
+import com.grilledmonkey.lepropepyaka.Pepyaka;
+
+/**
+ * Это наш сервис, который отвечает приложениям лепер ли юзер.
+ * 
+ * @author Aux
+ *
+ */
 public class PepyakaService extends IntentService {
 	private static final String PEPYAKA_SERVICE = "PepyakaService";
 

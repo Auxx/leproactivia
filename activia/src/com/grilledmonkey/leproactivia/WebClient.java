@@ -6,6 +6,12 @@ import android.graphics.Bitmap;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+/**
+ * Класс, связывающий Activity с WebView.
+ * 
+ * @author Aux
+ *
+ */
 public class WebClient extends WebViewClient {
 	private final SuperInterface handler;
 	private final Context context;
@@ -22,7 +28,7 @@ public class WebClient extends WebViewClient {
 	}
 
 	@Override
-    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+	public boolean shouldOverrideUrlLoading(WebView view, String url) {
 		if(Config.SUCCESS_URL.equals(url)) {
 			if(handler != null) {
 				handler.onLoginSuccess();
